@@ -30,7 +30,7 @@ enum layers {
 #define KC_MYCTL MT(MOD_RCTL, KC_ENT)
 #define KC_MYSYM LT(_SYM, KC_TAB)
 #define KC_MYALT MT(MOD_LALT, KC_TAB)
-#define KC_MYGUI MT(MOD_LGUI, KC_F3)
+#define KC_MYGUI MT(MOD_RCTL, KC_LGUI)
 #define KC_MYSFT MT(MOD_LSFT, KC_BSPC)
 #define KC_MYTAB LT(_SYS, KC_TAB)
 
@@ -100,8 +100,8 @@ enum custom_keycodes {
  * |--------+------+------+------+------+------|                |------+------+------+------+------+--------|
  * | Shift  |   Z  |   X  |   C  |   V  |   B  |                |   N  |   M  | ,  < | . >  | /  ? | Shift  |
  * `----------------------+------+------+------+------+  +------+------+------+------+----------------------'
- R                               | Ctrl | Tab  | Bspc |  | Enter| Space| Alt  |
- *                               |      | SYM  | Shift|  | Ctrl |      | (Tab)|
+ *                               | Super| Tab  | Bspc |  | Enter| Space| Alt  |
+ *                               | Ctrl | SYM  | Shift|  | Ctrl |      | (Tab)|
  *                               ---------------------'  `---------------------
  */
 
@@ -110,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_MYTAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P, KC_ARING,
       KC_CAPS,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_OUML, KC_AUML,
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, ANSICOM, ANSIDOT, ANSIKEY, KC_LSFT,
-                                         KC_MYCTL,KC_MYSYM,KC_MYSFT,      KC_MYCTL, KC_SPC,KC_MYALT
+                                         KC_MYGUI,KC_MYSYM,KC_MYSFT,      KC_MYCTL, KC_SPC,KC_MYALT
   ),
 
 /*
