@@ -35,7 +35,7 @@ enum layers {
 #define KC_MYTAB LT(_SYS, KC_TAB)
 
 // Fillers to make layering more clear
-#define _______ KC_TRNS
+#define _______ KC_TRANSPARENT
 #define XXXXXXX KC_NO
 
 // Swedish keybord special signs
@@ -245,15 +245,6 @@ void oled_render_logo(void) {
         0xc0, 0xc1, 0xc2, 0xc3, 0xc4, 0xc5, 0xc6, 0xc7, 0xc8, 0xc9, 0xca, 0xcb, 0xcc, 0xcd, 0xce, 0xcf, 0xd0, 0xd1, 0xd2, 0xd3, 0xd4,
         0};
     oled_write_P(crkbd_logo, false);
-}
-
-void oled_task_user(void) {
-    if (is_keyboard_master()) {
-        oled_render_layer_state();
-        oled_render_keylog();
-    } else {
-        oled_render_logo();
-    }
 }
 
 // Handle ANSI keys - from johannes-jansson
