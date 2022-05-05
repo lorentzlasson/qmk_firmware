@@ -27,12 +27,13 @@ enum layers {
 };
 
 // all modifiers should be modtap!
-#define KC_MYCTL MT(MOD_RCTL, KC_ENT)
-#define KC_MYSYM LT(_SYM, KC_TAB)
-#define KC_MYALT MT(MOD_LALT, KC_TAB)
-#define KC_MYGUI MT(MOD_RCTL, KC_LGUI)
-#define KC_MYSFT MT(MOD_LSFT, KC_BSPC)
-#define KC_MYTAB LT(_SYS, KC_TAB)
+#define KC_MYENT  LT(_SYS, KC_ENT)
+#define KC_MYSYM  LT(_SYM, KC_TAB)
+#define KC_MYSPC  MT(MOD_LCTL, KC_SPC)
+#define KC_MYBSPC MT(MOD_LCTL, KC_BSPC)
+#define KC_MYALT  MT(MOD_LALT, KC_TAB)
+#define KC_MYGUI  KC_LGUI
+#define KC_MYTAB  LT(_SYS, KC_TAB)
 
 // Fillers to make layering more clear
 #define _______ KC_TRANSPARENT
@@ -100,8 +101,8 @@ enum custom_keycodes {
  * |--------+------+------+------+------+------|                |------+------+------+------+------+--------|
  * | Shift  |   Z  |   X  |   C  |   V  |   B  |                |   N  |   M  | ,  < | . >  | /  ? | Shift  |
  * `----------------------+------+------+------+------+  +------+------+------+------+----------------------'
- *                               | Super| Tab  | Bspc |  | Enter| Space| Alt  |
- *                               | Ctrl | SYM  | Shift|  | Ctrl |      | (Tab)|
+ *                               | Super| Tab  | Bspc |  | Space| Enter| Tab  |
+ *                               |      | SYM  | Ctrl |  | Ctrl | SYS  | Alt  |
  *                               ---------------------'  `---------------------
  */
 
@@ -110,7 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_MYTAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P, KC_ARING,
       KC_CAPS,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_OUML, KC_AUML,
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, ANSICOM, ANSIDOT, ANSIKEY, KC_LSFT,
-                                         KC_MYGUI,KC_MYSYM,KC_MYSFT,      KC_MYCTL, KC_SPC,KC_MYALT
+                                         KC_MYGUI,KC_MYSYM,KC_MYBSPC,      KC_MYSPC,KC_MYENT,KC_MYALT
   ),
 
 /*
@@ -135,29 +136,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                           _______, _______, _______,  KC_0, KC_0, KC_0
   ),
 
-  [2] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_TAB, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSPC,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_MINS,  KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS,  KC_GRV,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE, KC_TILD,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,   MO(3),  KC_SPC,     KC_ENT, _______, KC_RALT
-                                      //`--------------------------'  `--------------------------'
-  ),
+/*
+ * System layer
+ *
+ * ,-------------------------------------------.                ,-------------------------------------------.
+ * |        |      |      |      |      |      |                |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|                |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                | LEFT | DOWN |  UP  | RIGHT|      |        |
+ * |--------+------+------+------+------+------+                +------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                |      |      |      |      |      |        |
+ * `----------------------+------+------+------+------+  +------+------+------+------+----------------------'
+ *                               |      |      |      |  |      |      |      |
+ *                               |      |      |      |  |      |      |      |
+ *                               ----------------------  ----------------------
+ */
 
-  [3] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        RESET, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI, _______,  KC_SPC,     KC_ENT, _______, KC_RALT
-                                      //`--------------------------'  `--------------------------'
+  [_SYS] = LAYOUT_split_3x6_3(
+     _______,    _______,    _______,    _______,    _______,    _______,                   _______,    _______,    _______,    _______,    _______,   _______,
+     _______,    _______,    _______,    _______,    _______,    _______,                   KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    _______,   _______,
+     _______,    _______,    _______,    _______,    _______,    _______,                   _______,    _______,    _______,    _______,    _______,   _______,
+                                                    _______, _______, _______,        _______, _______, _______
   )
+
+
 };
 
 #ifdef OLED_ENABLE
