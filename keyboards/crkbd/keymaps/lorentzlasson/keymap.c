@@ -51,8 +51,8 @@ enum layers {
 #define KC_SE_QUOT KC_BSLS
 #define KC_SE_DQUO S(KC_2)
 #define KC_SE_DLR RALT(KC_4)
-#define KC_SE_LCBR S(RALT(KC_8))
-#define KC_SE_RCBR S(RALT(KC_9))
+#define KC_SE_LCBR ALGR(KC_7)
+#define KC_SE_RCBR ALGR(KC_0)
 #define KC_SE_LBRC RALT(KC_8)
 #define KC_SE_RBRC RALT(KC_9)
 #define KC_SE_EQL S(KC_0)
