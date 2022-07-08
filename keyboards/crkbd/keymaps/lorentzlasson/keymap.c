@@ -74,7 +74,7 @@ enum layers {
 #define KC_SE_PLUS KC_MINS
 #define KC_SE_ASTR KC_PIPE
 #define KC_SE_QUES S(KC_MINS)
-#define KC_SE_BSLS S(RALT(KC_7))
+#define KC_SE_BSLS ALGR(KC_MINUS)
 #define KC_SE_PIPE RALT(KC_7)
 #define KC_SE_SCLN S(KC_COMM)
 #define KC_SE_COLN S(KC_DOT)
