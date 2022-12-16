@@ -291,13 +291,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case ANSIDOT: {
       if (record->event.pressed)
         if(shift_pressed) {
-          register_code(KC_GRV);
+          register_code(KC_NUBS);
         } else {
           register_code(KC_DOT);
         }
       else
         if(shift_pressed) {
-          unregister_code(KC_GRV);
+          unregister_code(KC_NUBS);
         } else {
           unregister_code(KC_DOT);
         }
