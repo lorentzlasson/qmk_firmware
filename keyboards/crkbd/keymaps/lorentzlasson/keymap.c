@@ -27,12 +27,13 @@ enum layers {
 };
 
 // all modifiers should be modtap!
-#define KC_MYENT  LT(_SYS, KC_ENT)
+#define KC_MYENT  MT(MOD_LALT, KC_ENT)
 #define KC_MYSYM  LT(_SYM, KC_TAB)
 #define KC_MYSPC  MT(MOD_LCTL, KC_SPC)
 #define KC_MYBSPC MT(MOD_LCTL, KC_BSPC)
 #define KC_MYALT  MT(MOD_LALT, KC_TAB)
-#define KC_MYGUI  KC_LGUI
+/* #define KC_TMUX   LT(_SYS, LCTL(KC_SPC)) */
+#define KC_TMUX   LCTL(KC_SPC)
 #define KC_MYTAB  LT(_SYS, KC_TAB)
 
 // Fillers to make layering more clear
@@ -53,8 +54,8 @@ enum layers {
  * |--------+------+------+------+------+------|                |------+------+------+------+------+--------|
  * | Shift  |   Z  |   X  |  C   |   V  |   B  |                |   N  |   M  | ,  < | . >  | /  ? | Shift  |
  * `----------------------+------+------+------+------+  +------+------+------+------+----------------------'
- *                               | Super| Tab  | Bspc |  | Space| Enter| Tab  |
- *                               |      | SYM  | Ctrl |  | Ctrl | SYS  | Alt  |
+ *                               | Tmux | Tab  | Bspc |  | Space| Enter| SUPER|
+ *                               | SYS  | SYM  | Ctrl |  | Ctrl | Alt  |      |
  *                               ---------------------'  `---------------------
  */
 
@@ -63,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_MYTAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,  KC_I,     KC_O,   KC_P,     KC_AU,
       KC_CAPS,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,  KC_K,     KC_L,   KC_OE,    KC_AE,
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M,  KC_COMMA, KC_DOT, KC_SLASH, KC_LSFT,
-                                         KC_MYGUI,KC_MYSYM,KC_MYBSPC,      KC_MYSPC,KC_MYENT,KC_MYALT
+                                         KC_TMUX,KC_MYSYM,KC_MYBSPC,      KC_MYSPC,KC_MYENT,KC_LGUI
   ),
 
 /*
