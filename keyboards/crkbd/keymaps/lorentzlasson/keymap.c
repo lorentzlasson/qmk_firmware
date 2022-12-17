@@ -39,9 +39,9 @@ enum layers {
 #define _______ KC_TRANSPARENT
 #define XXXXXXX KC_NO
 
-#define KC_AU UC(0x00E5)
-#define KC_AE UC(0x00E4)
-#define KC_OE UC(0x00F6)
+#define KC_AU UC(0x00E5) // å
+#define KC_AE UC(0x00E4) // ä
+#define KC_OE UC(0x00F6) // ö
 
 /*
  * Base Layer: QWERTY
