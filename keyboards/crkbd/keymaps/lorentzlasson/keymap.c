@@ -34,7 +34,6 @@ enum layers {
 #define KC_MYSPC  MT(MOD_LCTL, KC_SPC)
 #define KC_MYBSPC MT(MOD_LCTL, KC_BSPC)
 #define KC_MYALT  MT(MOD_LALT, KC_TAB)
-/* #define KC_TMUX   LT(_SYS, LCTL(KC_SPC)) */
 #define KC_TMUX   LCTL(KC_SPC)
 #define KC_MYTAB  LT(_SYS, KC_TAB)
 
@@ -57,7 +56,7 @@ enum layers {
  * | Shift  |   Z  |   X  |  C   |   V  |   B  |                |   N  |   M  | ,  < | . >  | /  ? | Shift  |
  * `----------------------+------+------+------+------+  +------+------+------+------+----------------------'
  *                               | Tmux | Tab  | Bspc |  | Space| Enter| SUPER|
- *                               | SYS  | SYM  | Ctrl |  | Ctrl | Alt  |      |
+ *                               |      | SYM  | Ctrl |  | Ctrl | Alt  |      |
  *                               ---------------------'  `---------------------
  */
 
