@@ -17,8 +17,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include QMK_KEYBOARD_H
 #include <stdio.h>
-#include "keymap_us_international.h"
-#include "sendstring_us_international.h"
 
 // Layers
 enum layers {
@@ -41,9 +39,9 @@ enum layers {
 #define _______ KC_TRANSPARENT
 #define XXXXXXX KC_NO
 
-#define KC_AU US_ARNG // å
-#define KC_AE US_ADIA // ä
-#define KC_OE US_ODIA // ö
+#define KC_AU ALGR(KC_W) // å
+#define KC_AE ALGR(KC_Q) // ä
+#define KC_OE ALGR(KC_P) // ö
 
 /*
  * Base Layer: QWERTY
