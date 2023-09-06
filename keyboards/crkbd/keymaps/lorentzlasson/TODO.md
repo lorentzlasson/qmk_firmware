@@ -1,3 +1,5 @@
+- fix F keys
+  - use F layer
 - use same layout file for aurora and crkbd
 - emoji picker
 - game layer
