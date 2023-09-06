@@ -1,4 +1,3 @@
 - game layer
 - use same layout file for aurora and crkbd
-- emojify docs
 - emoji picker
