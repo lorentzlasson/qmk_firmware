@@ -60,10 +60,10 @@ enum layers {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_split_3x6_3(
-     KC_MYTAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,  KC_I,     KC_O,   KC_P,     KC_AU,
-      KC_CAPS,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,  KC_K,     KC_L,   KC_OE,    KC_AE,
-      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M,  KC_COMMA, KC_DOT, KC_SLASH, KC_LSFT,
-                                         KC_TMUX,KC_MYSYM,KC_MYBSPC,      KC_MYSPC,KC_MYENT,KC_LGUI
+     KC_MYTAB, KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,            KC_Y,  KC_U,  KC_I,      KC_O,    KC_P,      KC_AU,
+     KC_CAPS,  KC_A,  KC_S,  KC_D,  KC_F,  KC_G,            KC_H,  KC_J,  KC_K,      KC_L,    KC_OE,     KC_AE,
+     KC_LSFT,  KC_Z,  KC_X,  KC_C,  KC_V,  KC_B,            KC_N,  KC_M,  KC_COMMA,  KC_DOT,  KC_SLASH,  KC_LSFT,
+                        KC_TMUX,KC_MYSYM,KC_MYBSPC,      KC_MYSPC,KC_MYENT,KC_LGUI
   ),
 
 /*
@@ -82,10 +82,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
   [_SYM] = LAYOUT_split_3x6_3(
-     KC_GRAVE, KC_EXLM,    KC_AT,  KC_LCBR, KC_RCBR, KC_AMPR,                 KC_ASTR, KC_7, KC_8, KC_9, KC_PLUS, KC_EQL,
-     KC_TILD, KC_CIRC, KC_DLR, KC_LPRN, KC_RPRN, KC_QUOT,                 KC_SCLN, KC_4, KC_5, KC_6, KC_MINS, KC_UNDS,
-     KC_PIPE, KC_HASH,    KC_PERC,   KC_LBRC, KC_RBRC, KC_DQUO,                 KC_COLN, KC_1, KC_2, KC_3, KC_BSLS, KC_PSCR,
-                                                          _______, _______, _______,  KC_0, KC_0, KC_0
+     KC_GRAVE, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, KC_AMPR,            KC_ASTR, KC_7, KC_8, KC_9, KC_PLUS, KC_EQL,
+     KC_TILD,  KC_CIRC, KC_DLR,  KC_LPRN, KC_RPRN, KC_QUOT,            KC_SCLN, KC_4, KC_5, KC_6, KC_MINS, KC_UNDS,
+     KC_PIPE,  KC_HASH, KC_PERC, KC_LBRC, KC_RBRC, KC_DQUO,            KC_COLN, KC_1, KC_2, KC_3, KC_BSLS, KC_PSCR,
+                                  _______, _______, _______,        KC_0, KC_0, KC_0
   ),
 
 /*
