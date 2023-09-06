@@ -38,7 +38,7 @@ enum layers {
 
 // Fillers to make layering more clear
 #define _______ KC_TRANSPARENT
-#define XXXXXXX KC_NO
+#define ___x___ KC_NO
 
 #define KC_AU ALGR(KC_W) // å
 #define KC_AE ALGR(KC_Q) // ä
@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_GRAVE, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, KC_AMPR,            KC_ASTR, KC_7, KC_8, KC_9, KC_PLUS, KC_EQL,
      KC_TILD,  KC_CIRC, KC_DLR,  KC_LPRN, KC_RPRN, KC_QUOT,            KC_SCLN, KC_4, KC_5, KC_6, KC_MINS, KC_UNDS,
      KC_PIPE,  KC_HASH, KC_PERC, KC_LBRC, KC_RBRC, KC_DQUO,            KC_COLN, KC_1, KC_2, KC_3, KC_BSLS, KC_DELETE,
-                                  _______, _______, _______,        _______, KC_0, _______
+                                  ___x___, ___x___, ___x___,        ___x___, KC_0, ___x___
   ),
 
 /*
@@ -105,10 +105,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
   [_SYS] = LAYOUT_split_3x6_3(
-     _______,    _______,    _______,    _______,    _______,    _______,                   _______,    _______,    _______,    _______,    _______,   _______,
-     _______,    _______,    _______,    _______,    _______,    _______,                   KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    _______,   _______,
-     _______,    _______,    _______,    _______,    _______,    _______,                   _______,    _______,    _______,    _______,    _______,   KC_PSCR,
-                                                    _______, _______, _______,        _______, _______, _______
+     ___x___,    ___x___,    ___x___,    ___x___,    ___x___,    ___x___,                   ___x___,    ___x___,    ___x___,    ___x___,    ___x___,   ___x___,
+     ___x___,    ___x___,    ___x___,    ___x___,    ___x___,    ___x___,                   KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    ___x___,   ___x___,
+     ___x___,    ___x___,    ___x___,    ___x___,    ___x___,    ___x___,                   ___x___,    ___x___,    ___x___,    ___x___,    ___x___,   KC_PSCR,
+                                                    ___x___, ___x___, ___x___,        ___x___, ___x___, ___x___
   ),
 
 /*
@@ -127,10 +127,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
   [_F] = LAYOUT_split_3x6_3(
-     _______,    _______,    _______,    _______,    _______,    _______,                   _______,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   _______,
-     _______,    _______,    _______,    _______,    _______,    _______,                   _______,    KC_F4,    KC_F5,    KC_F6,    KC_F11,   _______,
-     _______,    _______,    _______,    _______,    _______,    _______,                   _______,    KC_F1,    KC_F2,    KC_F3,    KC_F12,   _______,
-                                                    _______, _______, _______,        _______, _______, _______
+     ___x___,    ___x___,    ___x___,    ___x___,    ___x___,    ___x___,                   ___x___,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   ___x___,
+     ___x___,    ___x___,    ___x___,    ___x___,    ___x___,    ___x___,                   ___x___,    KC_F4,    KC_F5,    KC_F6,    KC_F11,   ___x___,
+     ___x___,    ___x___,    ___x___,    ___x___,    ___x___,    ___x___,                   ___x___,    KC_F1,    KC_F2,    KC_F3,    KC_F12,   ___x___,
+                                                    ___x___, ___x___, ___x___,        ___x___, ___x___, ___x___
   )
 
 };
