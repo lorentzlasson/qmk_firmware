@@ -1,0 +1,5 @@
+- use same layout file for aurora and crkbd
+- emoji picker
+- game layer
+- media keys
+- brightness keys
