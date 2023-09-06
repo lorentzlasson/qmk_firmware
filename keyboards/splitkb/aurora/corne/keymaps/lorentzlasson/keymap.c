@@ -37,7 +37,6 @@ enum layers {
 #define KC_MYTAB  LT(_SYS, KC_TAB)
 
 // Fillers to make layering more clear
-#define _______ KC_TRANSPARENT
 #define ___x___ KC_NO
 
 #define KC_AU ALGR(KC_W) // å
