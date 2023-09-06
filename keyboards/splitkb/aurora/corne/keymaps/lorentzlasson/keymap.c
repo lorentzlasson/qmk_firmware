@@ -23,7 +23,7 @@ enum layers {
     _QWERTY = 0,
     _SYM,
     _SYS,
-    _ADJUST
+    _F
 };
 
 // all modifiers should be modtap!
@@ -32,6 +32,7 @@ enum layers {
 #define KC_MYSPC  MT(MOD_LCTL, KC_SPC)
 #define KC_MYBSPC MT(MOD_LCTL, KC_BSPC)
 #define KC_MYALT  MT(MOD_LALT, KC_TAB)
+#define KC_MYCAPS LT(_F, KC_CAPS)
 #define KC_TMUX   LCTL(KC_SPC)
 #define KC_MYTAB  LT(_SYS, KC_TAB)
 
@@ -61,7 +62,7 @@ enum layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_split_3x6_3(
      KC_MYTAB, KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,            KC_Y,  KC_U,  KC_I,      KC_O,    KC_P,      KC_AU,
-     KC_CAPS,  KC_A,  KC_S,  KC_D,  KC_F,  KC_G,            KC_H,  KC_J,  KC_K,      KC_L,    KC_OE,     KC_AE,
+     KC_MYCAPS,KC_A,  KC_S,  KC_D,  KC_F,  KC_G,            KC_H,  KC_J,  KC_K,      KC_L,    KC_OE,     KC_AE,
      KC_LSFT,  KC_Z,  KC_X,  KC_C,  KC_V,  KC_B,            KC_N,  KC_M,  KC_COMMA,  KC_DOT,  KC_SLASH,  KC_LSFT,
                         KC_TMUX,KC_MYSYM,KC_MYBSPC,      KC_MYSPC,KC_MYENT,KC_LGUI
   ),
@@ -104,11 +105,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
   [_SYS] = LAYOUT_split_3x6_3(
-     KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,                     KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F11,    KC_F12,
+     _______,    _______,    _______,    _______,    _______,    _______,                   _______,    _______,    _______,    _______,    _______,   _______,
      _______,    _______,    _______,    _______,    _______,    _______,                   KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    _______,   _______,
      _______,    _______,    _______,    _______,    _______,    _______,                   _______,    _______,    _______,    _______,    _______,   KC_PSCR,
                                                     _______, _______, _______,        _______, _______, _______
-  )
+  ),
 
+/*
+ * F layer
+ *
+ * ,-------------------------------------------.                ,-------------------------------------------.
+ * |        |      |      |      |      |      |                |      |  F7  |  F8  |  F9  |  F10 |        |
+ * |--------+------+------+------+------+------|                |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                |      |  F4  |  F5  |  F6  |  F11 |        |
+ * |--------+------+------+------+------+------+                +------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                |      |  F1  |  F2  |  F3  |  F12 |        |
+ * `----------------------+------+------+------+------+  +------+------+------+------+----------------------'
+ *                               |      |      |      |  |      |      |      |
+ *                               |      |      |      |  |      |      |      |
+ *                               ----------------------  ----------------------
+ */
+
+  [_F] = LAYOUT_split_3x6_3(
+     _______,    _______,    _______,    _______,    _______,    _______,                   _______,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   _______,
+     _______,    _______,    _______,    _______,    _______,    _______,                   _______,    KC_F4,    KC_F5,    KC_F6,    KC_F11,   _______,
+     _______,    _______,    _______,    _______,    _______,    _______,                   _______,    KC_F1,    KC_F2,    KC_F3,    KC_F12,   _______,
+                                                    _______, _______, _______,        _______, _______, _______
+  )
 
 };
