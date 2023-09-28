@@ -1,3 +1,4 @@
+- vol down/up keys
 - game layer
 - use same layout file for aurora and crkbd
 - emoji picker
