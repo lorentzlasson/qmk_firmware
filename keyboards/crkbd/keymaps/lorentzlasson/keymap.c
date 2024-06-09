@@ -23,7 +23,8 @@ enum layers {
     _QWERTY = 0,
     _SYM,
     _SYS,
-    _F
+    _F,
+    _GAME
 };
 
 // all modifiers should be modtap!
@@ -35,6 +36,7 @@ enum layers {
 #define KC_MYCAPS LT(_F, KC_CAPS)
 #define KC_TMUX   LCTL(KC_SPC)
 #define KC_MYTAB  LT(_SYS, KC_TAB)
+#define KC_GAME   TG(_GAME)
 
 // Fillers to make layering more clear
 #define ___x___ KC_NO
@@ -98,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------+                +------+------+------+------+------+--------|
  * |        |      |      |      |      |      |                |      |      |      |      |      |   📸   |
  * `----------------------+------+------+------+------+  +------+------+------+------+----------------------'
- *                               |      |      |      |  |      |      |      |
+ *                               |      |      |      |  |  🎮  |      |      |
  *                               |      |      |      |  |      |      |      |
  *                               ----------------------  ----------------------
  */
@@ -107,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      ___x___,    ___x___,    KC_MUTE,    KC_VOLD,    KC_VOLU,    ___x___,                   ___x___,    ___x___,    ___x___,    ___x___,    ___x___,   KC_KB_POWER,
      ___x___,    ___x___,    KC_MPLY,    KC_MPRV,    KC_MNXT,    ___x___,                   KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    ___x___,   ___x___,
      ___x___,    ___x___,    ___x___,    ___x___,    ___x___,    ___x___,                   ___x___,    ___x___,    ___x___,    ___x___,    ___x___,   KC_PSCR,
-                                                    ___x___, ___x___, ___x___,        ___x___, ___x___, ___x___
+                                                    ___x___, ___x___, ___x___,        KC_GAME, ___x___, ___x___
   ),
 
 /*
@@ -130,6 +132,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      ___x___,    ___x___,    ___x___,    ___x___,    ___x___,    ___x___,                   ___x___,    KC_F4,    KC_F5,    KC_F6,    KC_F11,   ___x___,
      ___x___,    ___x___,    ___x___,    ___x___,    ___x___,    ___x___,                   ___x___,    KC_F1,    KC_F2,    KC_F3,    KC_F12,   ___x___,
                                                     ___x___, ___x___, ___x___,        ___x___, ___x___, ___x___
+  ),
+
+/*
+ * GAME layer
+ *
+ * ,-------------------------------------------.                ,-------------------------------------------.
+ * | Tab/SYS|   Q  |   W  |  E   |   R  |   T  |                |   Y  |   U  |   I  |   O  |   P  |   Å    |
+ * |--------+------+------+------+------+------|                |------+------+------+------+------+--------|
+ * | Esc/F  |   A  |   S  |  D   |   F  |   G  |                |   H  |   J  |   K  |   L  |   Ö  |   Ä    |
+ * |--------+------+------+------+------+------|                |------+------+------+------+------+--------|
+ * | Shift  |   Z  |   X  |  C   |   V  |   B  |                |   N  |   M  | ,  < | . >  | /  ? | Shift  |
+ * `----------------------+------+------+------+------+  +------+------+------+------+----------------------'
+ *                               |      | Alt  |Space |  |QWERTY|      |      |
+ *                               |      |      |      |  |      |      |      |
+ *                               ---------------------'  `---------------------
+ */
+
+  [_GAME] = LAYOUT_split_3x6_3(
+     KC_TAB,   KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,            KC_Y,  KC_U,  KC_I,      KC_O,    KC_P,      KC_AU,
+     KC_CAPS,  KC_A,  KC_S,  KC_D,  KC_F,  KC_G,            KC_H,  KC_J,  KC_K,      KC_L,    KC_OE,     KC_AE,
+     KC_LSFT,  KC_Z,  KC_X,  KC_C,  KC_V,  KC_B,            KC_N,  KC_M,  KC_COMMA,  KC_DOT,  KC_SLASH,  KC_LSFT,
+                        ___x___,MOD_LALT,KC_SPC,      KC_GAME, ___x___, ___x___
+
   )
 
 };
