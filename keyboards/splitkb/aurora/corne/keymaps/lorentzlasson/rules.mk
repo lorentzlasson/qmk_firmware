@@ -19,3 +19,5 @@
 
 # RGB Matrix is enabled at the revision level,
 # while we use the regular RGB underglow for testing
+COMBO_ENABLE = yes
+CAPS_WORD_ENABLE = yes
